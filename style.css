@@ -47,13 +47,6 @@ body {
   transform:translateY(-50%);
 }
 
-.badge {
-  background:rgba(255,255,255,0.15);
-  padding:6px 12px;
-  border-radius:20px;
-  font-size:12px;
-}
-
 h1 {
   font-size:3rem;
   line-height:1.1;
@@ -64,10 +57,14 @@ h1 {
   opacity:0.9;
 }
 
-.hero-cta {
-  margin-top:20px;
+.badge {
+  background:rgba(255,255,255,0.15);
+  padding:6px 12px;
+  border-radius:20px;
+  font-size:12px;
 }
 
+/* BUTTONS */
 .btn.primary {
   background:#ff7a00;
   padding:14px 22px;
@@ -81,6 +78,94 @@ h1 {
   border:1px solid white;
   padding:14px 22px;
   color:white;
+  text-decoration:none;
+  border-radius:6px;
+}
+
+/* SERVICES */
+.grid-3 {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+  padding:60px 0;
+}
+
+.card {
+  background:#f7f7f7;
+  padding:25px;
+  border-radius:12px;
+}
+
+/* SPLIT */
+.split {
+  padding:60px 0;
+}
+
+.split-grid {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:30px;
+  align-items:center;
+}
+
+.split img {
+  width:100%;
+  border-radius:10px;
+}
+
+.dark {
+  background:#111;
+  color:white;
+}
+
+/* CTA STRIP */
+.cta-strip {
+  background:#ff7a00;
+  color:white;
+  text-align:center;
+  padding:60px 20px;
+}
+
+/* CONTACT */
+.contact {
+  background:#111;
+  color:white;
+  padding:60px 0;
+  text-align:center;
+}
+
+form input, form select, form textarea {
+  width:100%;
+  padding:12px;
+  margin:10px 0;
+}
+
+button {
+  background:#ff7a00;
+  border:none;
+  padding:12px;
+  width:100%;
+  color:white;
+}
+
+/* WHATSAPP */
+.whatsapp {
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  background:#25D366;
+  color:white;
+  padding:15px;
+  border-radius:50px;
+  text-decoration:none;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+  h1 {font-size:2rem;}
+  .grid-3 {grid-template-columns:1fr;}
+  .split-grid {grid-template-columns:1fr;}
+}  color:white;
   text-decoration:none;
   border-radius:6px;
 }
