@@ -9,7 +9,25 @@
 <link rel="stylesheet" href="style.css">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
+<script>
+const elements = document.querySelectorAll('.split, .card, .pricing');
 
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('show');
+    }
+  });
+}, {
+  threshold: 0.15
+});
+
+elements.forEach(el => {
+  el.classList.add('fade-up');
+  observer.observe(el);
+});
+</script>
+  
 <body>
 
 <!-- NAV -->
