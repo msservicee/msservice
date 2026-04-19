@@ -1,5 +1,5 @@
 /* =========================
-   BASE
+   GLOBAL RESET (IMPORTANT FIX)
 ========================= */
 
 body {
@@ -8,6 +8,18 @@ body {
   color: #111;
   background: #fff;
 }
+
+h1, h2, h3, p {
+  margin: 0;
+}
+
+p {
+  margin-top: 8px;
+}
+
+/* =========================
+   CONTAINER
+========================= */
 
 .container {
   width: 90%;
@@ -30,15 +42,15 @@ body {
 .nav-inner {
   display: flex;
   justify-content: space-between;
-  padding: 15px 0;
+  padding: 12px 0; /* 🔥 smaller */
 }
 
 /* =========================
-   HERO
+   HERO (UNCHANGED)
 ========================= */
 
 .hero {
-  height: 95vh;
+  height: 90vh; /* 🔥 slightly smaller (better mobile feel) */
   background: url('images/hero.jpg') center/cover no-repeat;
   position: relative;
   color: white;
@@ -59,23 +71,185 @@ body {
 }
 
 .hero h1 {
-  font-size: 3rem;
-  line-height: 1.1;
-}
-
-.sub {
-  max-width: 500px;
-  opacity: 0.9;
-}
-
-.badge {
-  background: rgba(255,255,255,0.15);
-  padding: 6px 12px;
-  border-radius: 20px;
-  font-size: 12px;
+  font-size: 2.8rem;
 }
 
 /* =========================
+   SECTIONS (🔥 KEY FIX)
+========================= */
+
+.split {
+  padding: 35px 0; /* 🔥 WAS 60px -> BIG IMPROVEMENT */
+}
+
+.split > div {
+  margin-bottom: 10px;
+}
+
+/* layout tighter spacing */
+.split img {
+  width: 100%;
+  max-width: 360px;
+  border-radius: 14px;
+  display: block;
+  margin: 10px auto 0 auto;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.10);
+}
+
+/* =========================
+   PRICING (LESS SPACE)
+========================= */
+
+.pricing {
+  margin-top: 12px; /* 🔥 reduced */
+  padding: 12px;
+  background: rgba(0,0,0,0.04);
+  border-radius: 12px;
+}
+
+.dark .pricing {
+  background: rgba(255,255,255,0.08);
+}
+
+.pricing h3 {
+  margin-bottom: 6px;
+}
+
+.pricing ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.pricing li {
+  font-size: 13px;
+  padding: 3px 0;
+  opacity: 0.9;
+}
+
+.note {
+  font-size: 11px;
+  opacity: 0.7;
+  margin-top: 6px;
+}
+
+/* =========================
+   BEFORE / AFTER (FIX GAP)
+========================= */
+
+.before-after {
+  margin-top: 10px;
+}
+
+.ba-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px; /* 🔥 tighter */
+  margin-top: 10px;
+}
+
+.ba-card img {
+  width: 100%;
+  height: 120px; /* 🔥 smaller */
+  object-fit: cover;
+}
+
+.ba-card span {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  background: rgba(0,0,0,0.65);
+  color: white;
+  font-size: 10px;
+  padding: 3px 7px;
+  border-radius: 20px;
+}
+
+/* =========================
+   SERVICES (TIGHTER)
+========================= */
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  padding: 35px 0; /* 🔥 was 60px */
+}
+
+.card {
+  background: #f7f7f7;
+  padding: 18px;
+  border-radius: 12px;
+}
+
+/* =========================
+   CONTACT (LESS SPACE)
+========================= */
+
+.contact {
+  background: #111;
+  color: white;
+  padding: 40px 0; /* 🔥 was 60px */
+  text-align: center;
+}
+
+form input,
+form select,
+form textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  border-radius: 6px;
+  border: none;
+}
+
+button {
+  background: #ff7a00;
+  border: none;
+  padding: 12px;
+  width: 100%;
+  color: white;
+  border-radius: 6px;
+}
+
+/* =========================
+   WHATSAPP
+========================= */
+
+.whatsapp {
+  position: fixed;
+  bottom: 15px;
+  right: 15px;
+  background: #25D366;
+  color: white;
+  padding: 12px 14px;
+  border-radius: 50px;
+  font-weight: bold;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 768px) {
+
+  .hero h1 {
+    font-size: 1.9rem;
+  }
+
+  .split {
+    padding: 25px 0; /* 🔥 ultra compact */
+  }
+
+  .grid-3 {
+    grid-template-columns: 1fr;
+    padding: 25px 0;
+  }
+
+  .ba-card img {
+    height: 100px; /* 🔥 mobile compact */
+  }
+}/* =========================
    SERVICES
 ========================= */
 
