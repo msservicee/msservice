@@ -286,41 +286,40 @@ form textarea {
   }
 }
 
+
 /* =========================
-   MOBILE LAYOUT FIX (ORDER + UX)
+   MOBILE SERVICE CARDS UPGRADE
 ========================= */
 
 @media (max-width: 768px) {
 
-  /* stack layout cleanly */
-  .split {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  /* image ALWAYS first */
-  .split img {
-    order: 1;
-    margin: 0 auto 10px auto;
-  }
-
-  /* content ALWAYS second */
-  .split > div {
-    order: 2;
-    width: 100%;
-  }
-
-  /* pricing fix (no weird offset on mobile) */
-  .pricing {
-    margin-left: 0 !important;
-    max-width: 100%;
-    display: block;
-  }
-
-  /* reduce spacing overall */
-  .split {
+  .grid-3 {
+    grid-template-columns: 1fr;
+    gap: 14px;
     padding: 20px 0;
+  }
+
+  .card {
+    padding: 22px;
+    border-radius: 14px;
+
+    /* 🔥 stronger visual presence */
+    background: #ffffff;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+
+    /* 🔥 makes them feel tappable */
+    border: 1px solid rgba(0,0,0,0.06);
+  }
+
+  .card h3 {
+    font-size: 18px;   /* 🔥 bigger title */
+    margin-bottom: 6px;
+  }
+
+  .card p {
+    font-size: 14px;
+    opacity: 0.85;
+    line-height: 1.4;
   }
 
 }
