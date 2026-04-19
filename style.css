@@ -1,1 +1,172 @@
+body {
+  margin:0;
+  font-family: 'Inter', sans-serif;
+  color:#111;
+}
 
+.container {
+  width:90%;
+  max-width:1100px;
+  margin:auto;
+}
+
+.nav {
+  background:#fff;
+  position:sticky;
+  top:0;
+  z-index:1000;
+  border-bottom:1px solid #eee;
+}
+
+.nav-inner {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:15px 0;
+}
+
+.hero {
+  height:90vh;
+  background:url('https://images.unsplash.com/photo-1503387762-592deb58ef4e') center/cover;
+  position:relative;
+  color:white;
+}
+
+.overlay {
+  position:absolute;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.6);
+}
+
+.hero-content {
+  position:relative;
+  top:50%;
+  transform:translateY(-50%);
+}
+
+.hero h1 {
+  font-size:2.5rem;
+}
+
+.btn {
+  background:#ff7a00;
+  padding:12px 20px;
+  color:white;
+  text-decoration:none;
+  margin-top:10px;
+  display:inline-block;
+}
+
+.btn.outline {
+  border:1px solid white;
+  background:transparent;
+}
+
+.grid-3 {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+  padding:40px 0;
+}
+
+.card {
+  background:#f5f5f5;
+  padding:20px;
+  border-radius:8px;
+}
+
+.split {
+  padding:50px 0;
+}
+
+.split-grid {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:30px;
+  align-items:center;
+}
+
+.split img {
+  width:100%;
+  border-radius:8px;
+}
+
+.dark {
+  background:#111;
+  color:white;
+}
+
+.price {
+  font-size:1.5rem;
+  font-weight:bold;
+}
+
+.pricing {
+  background:#fafafa;
+}
+
+.trust {
+  text-align:center;
+  padding:40px 0;
+}
+
+.grid-4 {
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:20px;
+  margin-top:20px;
+}
+
+.contact {
+  background:#111;
+  color:white;
+  padding:50px 0;
+  text-align:center;
+}
+
+form input, form select, form textarea {
+  width:100%;
+  margin:10px 0;
+  padding:12px;
+}
+
+button {
+  background:#ff7a00;
+  border:none;
+  padding:12px;
+  width:100%;
+  color:white;
+}
+
+.whatsapp {
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  background:#25D366;
+  color:white;
+  padding:15px;
+  border-radius:50px;
+  text-decoration:none;
+}
+
+footer {
+  text-align:center;
+  padding:20px;
+  background:#eee;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+  .grid-3, .grid-4 {
+    grid-template-columns:1fr;
+  }
+
+  .split-grid {
+    grid-template-columns:1fr;
+  }
+
+  .hero h1 {
+    font-size:1.8rem;
+  }
+}
