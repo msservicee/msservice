@@ -84,7 +84,7 @@ p {
 }
 
 /* =========================
-   IMAGES (EQUAL SIZE FIX)
+   IMAGES
 ========================= */
 
 .split img {
@@ -99,7 +99,7 @@ p {
 }
 
 /* =========================
-   GRID SERVICES
+   GRID
 ========================= */
 
 .grid-3 {
@@ -116,7 +116,7 @@ p {
 }
 
 /* =========================
-   🚗 CAR VALET FEATURED
+   🚗 CAR VALET HIGHLIGHT
 ========================= */
 
 .dark {
@@ -126,18 +126,18 @@ p {
 }
 
 /* =========================
-   BEFORE / AFTER
+   BEFORE / AFTER (TIGHT)
 ========================= */
 
 .before-after {
-  margin-top: 10px;
+  margin-top: 6px;
 }
 
 .ba-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 8px;
-  margin-top: 10px;
+  gap: 5px;
+  margin-top: 6px;
 }
 
 .ba-card {
@@ -164,7 +164,7 @@ p {
 }
 
 /* =========================
-   💰 PRICING FIX (NOT FULL WIDTH)
+   💰 PRICING (GLOBAL FIXED + CONSISTENT OFFSET)
 ========================= */
 
 .pricing {
@@ -175,16 +175,18 @@ p {
 
   display: inline-block;
   max-width: 320px;
+
+  /* 🔥 NEW: consistent visual alignment */
+  margin-left: 12px; /* subtle push right for ALL sections */
 }
 
+/* Car Valet stronger emphasis but same system */
 .dark .pricing {
   background: #fff;
   box-shadow: 0 6px 18px rgba(0,0,0,0.08);
-}
 
-/* =========================
-   LISTS
-========================= */
+  margin-left: 20px; /* slightly more offset = featured feel */
+}
 
 .pricing ul {
   list-style: none;
@@ -205,13 +207,13 @@ p {
 }
 
 /* =========================
-   🔘 BUTTON FIX (CENTER + SMALL)
+   🔘 BUTTON
 ========================= */
 
 form button {
   display: block;
-  width: 220px;         /* 🔥 smaller */
-  margin: 15px auto 0;  /* 🔥 centered */
+  width: 220px;
+  margin: 15px auto 0;
   height: 44px;
   background: #ff7a00;
   color: white;
@@ -221,7 +223,7 @@ form button {
 }
 
 /* =========================
-   FORMS UNIFORM
+   FORMS
 ========================= */
 
 form input,
@@ -263,7 +265,7 @@ form textarea {
 }
 
 /* =========================
-   DESKTOP LAYOUT
+   DESKTOP FIX
 ========================= */
 
 @media (min-width: 900px) {
@@ -272,7 +274,7 @@ form textarea {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 40px;
+    gap: 25px; /* 🔥 reduced spacing */
   }
 
   .split img {
