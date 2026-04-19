@@ -1,18 +1,26 @@
+/* =========================
+   GLOBAL RESET
+========================= */
+
 body {
   margin: 0;
   font-family: 'Inter', sans-serif;
   color: #111;
   background: #fff;
+  line-height: 1.5;
 }
 
-/* CONTAINER */
+/* container */
 .container {
   width: 90%;
   max-width: 1100px;
   margin: auto;
 }
 
-/* NAV */
+/* =========================
+   NAV
+========================= */
+
 .nav {
   background: #fff;
   position: sticky;
@@ -28,7 +36,10 @@ body {
   padding: 15px 0;
 }
 
-/* 🔥 HERO PREMIUM */
+/* =========================
+   HERO (NO IMAGE CHANGE)
+========================= */
+
 .hero {
   height: 95vh;
   background: url('images/hero.jpg') center/cover no-repeat;
@@ -38,7 +49,6 @@ body {
   align-items: center;
 }
 
-/* dark overlay */
 .hero::before {
   content: "";
   position: absolute;
@@ -46,22 +56,14 @@ body {
   background: rgba(0,0,0,0.65);
 }
 
-/* content */
 .hero-content {
   position: relative;
   z-index: 2;
-  width: 100%;
 }
 
 .hero h1 {
   font-size: 3rem;
   line-height: 1.1;
-  margin: 10px 0;
-}
-
-.sub {
-  max-width: 500px;
-  opacity: 0.9;
 }
 
 /* badge */
@@ -73,38 +75,10 @@ body {
   font-size: 12px;
 }
 
-/* CTA */
-.hero-cta {
-  margin-top: 20px;
-}
+/* =========================
+   SERVICES
+========================= */
 
-/* BUTTONS */
-.btn.primary {
-  background: #ff7a00;
-  padding: 14px 22px;
-  color: white;
-  text-decoration: none;
-  border-radius: 6px;
-  display: inline-block;
-}
-
-.btn.secondary {
-  border: 1px solid white;
-  padding: 14px 22px;
-  color: white;
-  text-decoration: none;
-  border-radius: 6px;
-  margin-left: 10px;
-}
-
-/* TRUST LINE */
-.mini-trust {
-  margin-top: 20px;
-  font-size: 14px;
-  opacity: 0.9;
-}
-
-/* 🔥 SERVICES */
 .grid-3 {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -114,16 +88,14 @@ body {
 
 .card {
   background: #f7f7f7;
-  padding: 25px;
+  padding: 22px;
   border-radius: 12px;
-  transition: 0.3s;
 }
 
-.card:hover {
-  transform: translateY(-5px);
-}
+/* =========================
+   SPLIT SECTIONS
+========================= */
 
-/* 🔥 SPLIT SECTIONS */
 .split {
   padding: 60px 0;
 }
@@ -135,30 +107,72 @@ body {
   align-items: center;
 }
 
-.split img {
+/* =========================
+   🔥 GLOBAL IMAGE SIZE FIX
+   (IMPORTANT - not hero bg)
+========================= */
+
+img {
   width: 100%;
+  max-width: 420px;   /* 🔥 LIMIT WIDTH */
+  height: auto;
   border-radius: 14px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+  object-fit: cover;
+  display: block;
+  margin: auto;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.10);
+  transition: 0.3s ease;
 }
 
-/* DARK SECTION */
-.dark {
-  background: #111;
-  color: white;
+/* hover effect */
+img:hover {
+  transform: scale(1.02);
 }
 
-/* 🔥 BEFORE AFTER */
-.grid-2 {
+/* =========================
+   BEFORE / AFTER (UPDATED)
+========================= */
+
+.before-after {
+  padding: 70px 0;
+  text-align: center;
+}
+
+.ba-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 20px;
+  gap: 25px;
+  margin-top: 30px;
 }
 
-.grid-2 img {
-  border-radius: 14px;
+.ba-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px;
 }
 
-/* 🔥 CONTACT */
+.ba-card img {
+  width: 100%;
+  max-width: 100%;   /* override global limit */
+  height: 260px;     /* 🔥 smaller + cleaner */
+  object-fit: cover;
+}
+
+.ba-card span {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: rgba(0,0,0,0.65);
+  color: #fff;
+  padding: 6px 10px;
+  font-size: 12px;
+  border-radius: 20px;
+}
+
+/* =========================
+   CONTACT
+========================= */
+
 .contact {
   background: #111;
   color: white;
@@ -172,8 +186,8 @@ form textarea {
   width: 100%;
   padding: 12px;
   margin: 10px 0;
-  border: none;
   border-radius: 6px;
+  border: none;
 }
 
 button {
@@ -186,20 +200,26 @@ button {
   cursor: pointer;
 }
 
-/* 🔥 WHATSAPP BUTTON */
+/* =========================
+   WHATSAPP BUTTON
+========================= */
+
 .whatsapp {
   position: fixed;
   bottom: 20px;
   right: 20px;
   background: #25D366;
   color: white;
-  padding: 15px;
+  padding: 14px 16px;
   border-radius: 50px;
   text-decoration: none;
   font-weight: bold;
 }
 
-/* 📱 MOBILE */
+/* =========================
+   MOBILE
+========================= */
+
 @media (max-width: 768px) {
 
   .hero h1 {
@@ -214,90 +234,16 @@ button {
     grid-template-columns: 1fr;
   }
 
-  .grid-2 {
-    grid-template-columns: 1fr;
+  /* images smaller on mobile */
+  img {
+    max-width: 100%;
   }
-
-  .btn.secondary {
-    display: block;
-    margin-top: 10px;
-    margin-left: 0;
-  }
-}
-/* =========================
-   BEFORE / AFTER SECTION
-========================= */
-
-.before-after {
-  padding: 70px 0;
-  text-align: center;
-}
-
-.before-after h2 {
-  font-size: 2rem;
-  margin-bottom: 10px;
-}
-
-/* GRID - side by side */
-.ba-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 25px;
-  margin-top: 30px;
-}
-
-/* CARD */
-.ba-card {
-  position: relative;
-  overflow: hidden;
-  border-radius: 16px;
-  background: #f5f5f5;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-}
-
-/* IMAGE - equal size fix */
-.ba-card img {
-  width: 100%;
-  height: 300px;
-  object-fit: cover;
-  display: block;
-  transition: transform 0.35s ease;
-}
-
-/* LABEL (Before / After) */
-.ba-card span {
-  position: absolute;
-  top: 15px;
-  left: 15px;
-  background: rgba(0,0,0,0.65);
-  color: #fff;
-  padding: 6px 12px;
-  font-size: 12px;
-  border-radius: 20px;
-  letter-spacing: 0.5px;
-}
-
-/* hover effect */
-.ba-card:hover img {
-  transform: scale(1.04);
-}
-
-/* =========================
-   MOBILE FIX
-========================= */
-
-@media (max-width: 768px) {
 
   .ba-grid {
     grid-template-columns: 1fr;
-    gap: 15px;
   }
 
   .ba-card img {
-    height: 220px;
-  }
-
-  .before-after h2 {
-    font-size: 1.6rem;
+    height: 200px;
   }
 }
