@@ -76,21 +76,21 @@ p {
 }
 
 /* =========================
-   SECTIONS SPACING (FIX)
+   SECTIONS SPACING
 ========================= */
 
 .split {
-  padding: 30px 0;   /* 🔥 compact flow */
+  padding: 30px 0;
 }
 
 /* =========================
-   IMAGES (FIX EQUAL SIZE)
+   IMAGES (FIX SAME SIZE)
 ========================= */
 
 .split img {
   width: 100%;
   max-width: 380px;
-  aspect-ratio: 4 / 3;   /* 🔥 same shape always */
+  aspect-ratio: 4 / 3;
   object-fit: cover;
   border-radius: 14px;
   display: block;
@@ -116,18 +116,13 @@ p {
 }
 
 /* =========================
-   🚗 CAR VALET (FEATURED SECTION)
+   🚗 CAR VALET FEATURED
 ========================= */
 
 .dark {
   background: linear-gradient(135deg, #f5f5f5, #e9e9e9);
-  border-top: 2px solid #ff7a00;   /* 🔥 highlight line */
+  border-top: 2px solid #ff7a00;
   border-bottom: 2px solid #ff7a00;
-}
-
-/* make pricing stand out */
-.dark .pricing {
-  background: #fff;
 }
 
 /* =========================
@@ -169,14 +164,21 @@ p {
 }
 
 /* =========================
-   PRICING BOX
+   💰 PRICING (FIXED CARD WIDTH)
 ========================= */
 
 .pricing {
   margin-top: 12px;
-  padding: 12px;
+  padding: 14px;
   background: rgba(0,0,0,0.04);
   border-radius: 12px;
+
+  max-width: 320px; /* 🔥 IMPORTANT FIX */
+}
+
+.dark .pricing {
+  background: #fff;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
 }
 
 .pricing h3 {
@@ -202,7 +204,7 @@ p {
 }
 
 /* =========================
-   BUTTON FIX (IMPORTANT)
+   🔘 BUTTON FIX (CONSISTENT)
 ========================= */
 
 button,
@@ -210,12 +212,13 @@ button,
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  height: 44px;          /* 🔥 same height everywhere */
+  height: 44px;
   padding: 0 18px;
   font-size: 14px;
   font-weight: 600;
   border-radius: 6px;
   box-sizing: border-box;
+  width: auto;
 }
 
 form button {
@@ -263,7 +266,29 @@ form textarea {
 }
 
 /* =========================
-   MOBILE OPTIMIZATION
+   🖥️ DESKTOP LAYOUT UPGRADE
+========================= */
+
+@media (min-width: 900px) {
+
+  .split {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+  }
+
+  .split img {
+    margin: 0;
+  }
+
+  .split > div {
+    flex: 1;
+  }
+}
+
+/* =========================
+   📱 MOBILE FIX
 ========================= */
 
 @media (max-width: 768px) {
@@ -276,6 +301,10 @@ form textarea {
     grid-template-columns: 1fr;
   }
 
+  .split {
+    padding: 25px 0;
+  }
+
   .split img {
     max-width: 100%;
   }
@@ -283,27 +312,4 @@ form textarea {
   .ba-card img {
     height: 100px;
   }
-
-  .split {
-    padding: 25px 0;
-  }
 }
-/* =========================
-   SCROLL ANIMATIONS (LIGHTWEIGHT)
-========================= */
-
-.fade-up {
-  opacity: 0;
-  transform: translateY(18px);
-  transition: all 0.6s ease;
-}
-
-.fade-up.show {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* stagger helper (optional) */
-.delay-1 { transition-delay: 0.1s; }
-.delay-2 { transition-delay: 0.2s; }
-.delay-3 { transition-delay: 0.3s; }
