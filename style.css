@@ -1,5 +1,5 @@
 /* =========================
-   GLOBAL RESET (IMPORTANT FIX)
+   BASE RESET
 ========================= */
 
 body {
@@ -42,15 +42,15 @@ p {
 .nav-inner {
   display: flex;
   justify-content: space-between;
-  padding: 12px 0; /* 🔥 smaller */
+  padding: 12px 0;
 }
 
 /* =========================
-   HERO (UNCHANGED)
+   HERO
 ========================= */
 
 .hero {
-  height: 90vh; /* 🔥 slightly smaller (better mobile feel) */
+  height: 90vh;
   background: url('images/hero.jpg') center/cover no-repeat;
   position: relative;
   color: white;
@@ -72,24 +72,26 @@ p {
 
 .hero h1 {
   font-size: 2.8rem;
+  line-height: 1.1;
 }
 
 /* =========================
-   SECTIONS (🔥 KEY FIX)
+   SECTIONS SPACING (FIX)
 ========================= */
 
 .split {
-  padding: 35px 0; /* 🔥 WAS 60px -> BIG IMPROVEMENT */
+  padding: 30px 0;   /* 🔥 compact flow */
 }
 
-.split > div {
-  margin-bottom: 10px;
-}
+/* =========================
+   IMAGES (FIX EQUAL SIZE)
+========================= */
 
-/* layout tighter spacing */
 .split img {
   width: 100%;
-  max-width: 360px;
+  max-width: 380px;
+  aspect-ratio: 4 / 3;   /* 🔥 same shape always */
+  object-fit: cover;
   border-radius: 14px;
   display: block;
   margin: 10px auto 0 auto;
@@ -97,18 +99,84 @@ p {
 }
 
 /* =========================
-   PRICING (LESS SPACE)
+   SERVICES GRID
 ========================= */
 
-.pricing {
-  margin-top: 12px; /* 🔥 reduced */
-  padding: 12px;
-  background: rgba(0,0,0,0.04);
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  padding: 30px 0;
+}
+
+.card {
+  background: #f7f7f7;
+  padding: 18px;
   border-radius: 12px;
 }
 
+/* =========================
+   🚗 CAR VALET (FEATURED SECTION)
+========================= */
+
+.dark {
+  background: linear-gradient(135deg, #f5f5f5, #e9e9e9);
+  border-top: 2px solid #ff7a00;   /* 🔥 highlight line */
+  border-bottom: 2px solid #ff7a00;
+}
+
+/* make pricing stand out */
 .dark .pricing {
-  background: rgba(255,255,255,0.08);
+  background: #fff;
+}
+
+/* =========================
+   BEFORE / AFTER
+========================= */
+
+.before-after {
+  margin-top: 10px;
+}
+
+.ba-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.ba-card {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.ba-card img {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+}
+
+.ba-card span {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  background: rgba(0,0,0,0.65);
+  color: white;
+  font-size: 10px;
+  padding: 3px 7px;
+  border-radius: 20px;
+}
+
+/* =========================
+   PRICING BOX
+========================= */
+
+.pricing {
+  margin-top: 12px;
+  padding: 12px;
+  background: rgba(0,0,0,0.04);
+  border-radius: 12px;
 }
 
 .pricing h3 {
@@ -134,62 +202,37 @@ p {
 }
 
 /* =========================
-   BEFORE / AFTER (FIX GAP)
+   BUTTON FIX (IMPORTANT)
 ========================= */
 
-.before-after {
-  margin-top: 10px;
+button,
+.btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  height: 44px;          /* 🔥 same height everywhere */
+  padding: 0 18px;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 6px;
+  box-sizing: border-box;
 }
 
-.ba-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 8px; /* 🔥 tighter */
-  margin-top: 10px;
-}
-
-.ba-card img {
+form button {
   width: 100%;
-  height: 120px; /* 🔥 smaller */
-  object-fit: cover;
-}
-
-.ba-card span {
-  position: absolute;
-  top: 8px;
-  left: 8px;
-  background: rgba(0,0,0,0.65);
+  background: #ff7a00;
   color: white;
-  font-size: 10px;
-  padding: 3px 7px;
-  border-radius: 20px;
+  border: none;
 }
 
 /* =========================
-   SERVICES (TIGHTER)
-========================= */
-
-.grid-3 {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 15px;
-  padding: 35px 0; /* 🔥 was 60px */
-}
-
-.card {
-  background: #f7f7f7;
-  padding: 18px;
-  border-radius: 12px;
-}
-
-/* =========================
-   CONTACT (LESS SPACE)
+   CONTACT
 ========================= */
 
 .contact {
   background: #111;
   color: white;
-  padding: 40px 0; /* 🔥 was 60px */
+  padding: 40px 0;
   text-align: center;
 }
 
@@ -201,15 +244,6 @@ form textarea {
   margin: 8px 0;
   border-radius: 6px;
   border: none;
-}
-
-button {
-  background: #ff7a00;
-  border: none;
-  padding: 12px;
-  width: 100%;
-  color: white;
-  border-radius: 6px;
 }
 
 /* =========================
@@ -225,10 +259,11 @@ button {
   padding: 12px 14px;
   border-radius: 50px;
   font-weight: bold;
+  text-decoration: none;
 }
 
 /* =========================
-   MOBILE
+   MOBILE OPTIMIZATION
 ========================= */
 
 @media (max-width: 768px) {
@@ -237,370 +272,19 @@ button {
     font-size: 1.9rem;
   }
 
-  .split {
-    padding: 25px 0; /* 🔥 ultra compact */
-  }
-
   .grid-3 {
     grid-template-columns: 1fr;
+  }
+
+  .split img {
+    max-width: 100%;
+  }
+
+  .ba-card img {
+    height: 100px;
+  }
+
+  .split {
     padding: 25px 0;
-  }
-
-  .ba-card img {
-    height: 100px; /* 🔥 mobile compact */
-  }
-}/* =========================
-   SERVICES
-========================= */
-
-.grid-3 {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-  padding: 60px 0;
-}
-
-.card {
-  background: #f7f7f7;
-  padding: 22px;
-  border-radius: 12px;
-}
-
-/* =========================
-   SPLIT
-========================= */
-
-.split {
-  padding: 60px 0;
-}
-
-.split img {
-  width: 100%;
-  max-width: 380px;
-  border-radius: 14px;
-  display: block;
-  margin: auto;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.10);
-}
-
-/* dark */
-.dark {
-  background: #111;
-  color: white;
-}
-
-/* =========================
-   BEFORE AFTER
-========================= */
-
-.before-after {
-  margin-top: 20px;
-}
-
-.ba-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 10px;
-  margin-top: 15px;
-}
-
-.ba-card {
-  position: relative;
-  border-radius: 12px;
-  overflow: hidden;
-}
-
-.ba-card img {
-  width: 100%;
-  height: 140px;
-  object-fit: cover;
-}
-
-.ba-card span {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  background: rgba(0,0,0,0.65);
-  color: white;
-  font-size: 11px;
-  padding: 4px 8px;
-  border-radius: 20px;
-}
-
-/* =========================
-   PRICING
-========================= */
-
-.pricing {
-  margin-top: 20px;
-  padding: 15px;
-  background: rgba(255,255,255,0.05);
-  border-radius: 12px;
-}
-
-.pricing h3 {
-  margin-bottom: 10px;
-}
-
-.pricing ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.pricing li {
-  font-size: 14px;
-  padding: 4px 0;
-  opacity: 0.9;
-}
-
-.note {
-  font-size: 12px;
-  opacity: 0.7;
-  margin-top: 10px;
-}
-
-/* =========================
-   CONTACT
-========================= */
-
-.contact {
-  background: #111;
-  color: white;
-  padding: 60px 0;
-  text-align: center;
-}
-
-form input,
-form select,
-form textarea {
-  width: 100%;
-  padding: 12px;
-  margin: 10px 0;
-  border: none;
-  border-radius: 6px;
-}
-
-button {
-  background: #ff7a00;
-  border: none;
-  padding: 12px;
-  width: 100%;
-  color: white;
-  border-radius: 6px;
-}
-
-/* =========================
-   WHATSAPP
-========================= */
-
-.whatsapp {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background: #25D366;
-  color: white;
-  padding: 14px 16px;
-  border-radius: 50px;
-  font-weight: bold;
-  text-decoration: none;
-}
-
-/* =========================
-   MOBILE FIX (IMPORTANT)
-========================= */
-
-@media (max-width: 768px) {
-
-  .hero h1 {
-    font-size: 2rem;
-  }
-
-  .grid-3 {
-    grid-template-columns: 1fr;
-  }
-
-  .split img {
-    max-width: 100%;
-  }
-
-  .ba-card img {
-    height: 110px;
-  }
-
-  .split {
-    padding: 35px 0;
-  }
-}
-/* =========================
-   BUTTONS
-========================= */
-
-.btn.primary {
-  background: #ff7a00;
-  padding: 14px 22px;
-  color: white;
-  text-decoration: none;
-  border-radius: 6px;
-  display: inline-block;
-}
-
-.btn.secondary {
-  border: 1px solid white;
-  padding: 14px 22px;
-  color: white;
-  text-decoration: none;
-  border-radius: 6px;
-  margin-left: 10px;
-}
-
-/* =========================
-   SERVICES
-========================= */
-
-.grid-3 {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-  padding: 60px 0;
-}
-
-.card {
-  background: #f7f7f7;
-  padding: 22px;
-  border-radius: 12px;
-}
-
-/* =========================
-   SPLIT SECTIONS
-========================= */
-
-.split {
-  padding: 60px 0;
-}
-
-.split img {
-  width: 100%;
-  max-width: 380px;
-  border-radius: 14px;
-  display: block;
-  margin: auto;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.10);
-}
-
-/* dark section */
-.dark {
-  background: #111;
-  color: white;
-}
-
-/* =========================
-   BEFORE / AFTER
-========================= */
-
-.before-after {
-  margin-top: 20px;
-}
-
-.ba-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 10px;
-  margin-top: 15px;
-}
-
-.ba-card {
-  position: relative;
-  border-radius: 12px;
-  overflow: hidden;
-}
-
-.ba-card img {
-  width: 100%;
-  height: 160px;
-  object-fit: cover;
-}
-
-.ba-card span {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  background: rgba(0,0,0,0.65);
-  color: white;
-  font-size: 11px;
-  padding: 4px 8px;
-  border-radius: 20px;
-}
-
-/* =========================
-   CONTACT
-========================= */
-
-.contact {
-  background: #111;
-  color: white;
-  padding: 60px 0;
-  text-align: center;
-}
-
-form input,
-form select,
-form textarea {
-  width: 100%;
-  padding: 12px;
-  margin: 10px 0;
-  border: none;
-  border-radius: 6px;
-}
-
-button {
-  background: #ff7a00;
-  border: none;
-  padding: 12px;
-  width: 100%;
-  color: white;
-  border-radius: 6px;
-}
-
-/* =========================
-   WHATSAPP
-========================= */
-
-.whatsapp {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background: #25D366;
-  color: white;
-  padding: 14px 16px;
-  border-radius: 50px;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-/* =========================
-   MOBILE
-========================= */
-
-@media (max-width: 768px) {
-
-  .hero h1 {
-    font-size: 2rem;
-  }
-
-  .grid-3 {
-    grid-template-columns: 1fr;
-  }
-
-  .split img {
-    max-width: 100%;
-  }
-
-  .ba-grid {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .ba-card img {
-    height: 130px;
   }
 }
