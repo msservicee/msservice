@@ -135,21 +135,23 @@
   <div class="container">
     <h2>Get a Free Quote</h2>
 
-    <form>
-      <input type="text" placeholder="Your Name" required>
-      <input type="tel" placeholder="Phone Number" required>
+    <form action="https://formspree.io/f/XXXXX" method="POST">
 
-      <select required>
-        <option value="">Select Service</option>
-        <option>Handyman</option>
-        <option>Car Valet</option>
-        <option>Cleaning</option>
-      </select>
+  <input type="text" name="name" placeholder="Your Name" required>
+  <input type="tel" name="phone" placeholder="Phone Number" required>
+      <input type="hidden" name="_redirect" value="https://twojastrona.github.io/thank-you.html">
 
-      <textarea placeholder="Describe your job"></textarea>
+  <select name="service" required>
+    <option value="">Select Service</option>
+    <option>Handyman</option>
+    <option>Car Valet</option>
+    <option>Cleaning</option>
+  </select>
 
-      <button type="submit">Send Request</button>
-    </form>
+  <textarea name="message" placeholder="Describe your job"></textarea>
+
+  <button type="submit">Send Request</button>
+</form>
   </div>
 </section>
 
