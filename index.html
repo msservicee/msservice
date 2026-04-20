@@ -1,180 +1,146 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Mayo Home Services</title>
+  <!-- SEO -->
+  <title>Handyman, Cleaning & Car Valet Services in County Mayo</title>
+  <meta name="description" content="Professional handyman, car valet and cleaning services in County Mayo. Reliable, affordable and fast service. Get your free quote today.">
+  <meta name="keywords" content="handyman mayo, car valet mayo, cleaning services mayo, house cleaning mayo, handyman near me mayo">
 
-<link rel="stylesheet" href="style.css">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <!-- Open Graph (for Facebook ads) -->
+  <meta property="og:title" content="Handyman, Cleaning & Car Valet Services in County Mayo">
+  <meta property="og:description" content="Reliable local services in County Mayo. Handyman, cleaning and car valet.">
+  <meta property="og:type" content="website">
+
+  <link rel="stylesheet" href="style.css">
 </head>
-<script>
-const elements = document.querySelectorAll('.split, .card, .pricing');
 
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('show');
-    }
-  });
-}, {
-  threshold: 0.15
-});
-
-elements.forEach(el => {
-  el.classList.add('fade-up');
-  observer.observe(el);
-});
-</script>
-  
 <body>
 
-<!-- NAV -->
-<nav class="nav">
-  <div class="container nav-inner">
-    <div>Mayo Home Services</div>
-    <a href="#contact">Get Quote</a>
-  </div>
-</nav>
-
 <!-- HERO -->
-<header class="hero">
-  <div class="hero-content container">
-
-    <span class="badge">County Mayo Services</span>
-
-    <h1>Handyman, Cleaning & Car Valet</h1>
-
+<section class="hero">
+  <div class="container hero-content">
+    <h1>Handyman, Cleaning & Car Valet Services in County Mayo</h1>
     <p class="sub">
-      Reliable local services across County Mayo.
+      Reliable local services across County Mayo. Fast response, affordable pricing and professional results.
     </p>
-
   </div>
-</header>
+</section>
 
 <!-- SERVICES -->
-<section class="grid-3 container">
+<section class="container grid-3">
 
   <div class="card">
-    <h3>🔧 Handyman</h3>
-    <p>Repairs, painting and furniture assembly.</p>
+    <h3>Handyman Services</h3>
+    <p>Painting, repairs, furniture assembly and general home maintenance.</p>
   </div>
 
   <div class="card">
-    <h3>🚗 Car Valet</h3>
-    <p>Deep interior cleaning & full detailing.</p>
+    <h3>Car Valet</h3>
+    <p>Interior and exterior deep cleaning, stain removal and full detailing.</p>
   </div>
 
   <div class="card">
-    <h3>🏠 Cleaning</h3>
-    <p>Domestic cleaning services.</p>
+    <h3>Domestic Cleaning</h3>
+    <p>Regular, deep cleaning and move-in / move-out services.</p>
   </div>
 
 </section>
 
 <!-- HANDYMAN -->
 <section class="split container">
-
   <div>
-    <h2>Handyman Services</h2>
-    <p>Professional home repairs and maintenance.</p>
+    <h2>Handyman Services in County Mayo</h2>
+    <p>
+      Professional handyman services including painting, repairs, furniture assembly and general maintenance.
+      Fast and reliable service across County Mayo.
+    </p>
 
     <div class="pricing">
       <h3>Pricing</h3>
       <ul>
-        <li>Small repairs: from €50</li>
-        <li>Painting: from €120</li>
-        <li>Furniture assembly: from €40</li>
+        <li>Painting & repairs – from €50</li>
+        <li>Furniture assembly – from €40</li>
+        <li>General repairs – from €60</li>
       </ul>
-      <p class="note">Final price depends on job.</p>
     </div>
-
   </div>
 
-  <img src="images/handyman.jpg" alt="Handyman">
-
+  <img src="images/handyman.jpg" alt="Handyman service in County Mayo">
 </section>
 
-<!-- CAR VALET (ONLY ONCE - FIXED) -->
-<section class="split dark container">
-
+<!-- CAR VALET -->
+<section class="split container dark">
   <div>
+    <h2>Car Valet Service in County Mayo</h2>
+    <p>
+      Full car valet service including deep cleaning, stain removal, dog hair removal and detailing.
+      Restore your vehicle to a like-new condition.
+    </p>
 
-    <h2>Car Valet Service</h2>
-    <p>Deep cleaning, stain removal and full detailing.</p>
-
-    <!-- BEFORE / AFTER -->
-    <div class="before-after">
-
-      <div class="ba-grid">
-
-        <div class="ba-card">
-          <img src="images/car-before.jpg" alt="Before">
-          <span>Before</span>
-        </div>
-
-        <div class="ba-card">
-          <img src="images/car-after.jpg" alt="After">
-          <span>After</span>
-        </div>
-
-      </div>
-
-    </div>
-
-    <!-- PRICING -->
     <div class="pricing">
       <h3>Pricing</h3>
       <ul>
-        <li>From €130 – €160</li>
-        <li>SUV: +€20</li>
-        <li>7-seater: +€30</li>
-        <li>Heavy dirt: +€30</li>
-        <li>Dog hair: €35–€55</li>
+        <li>Full valet – €130–€160+</li>
+        <li>SUV – +€20</li>
+        <li>7 seater – +€30</li>
+        <li>Dog hair removal – €35–€55</li>
       </ul>
-      <p class="note">Final price depends on condition.</p>
+    </div>
+
+    <div class="before-after">
+      <h3>Before & After</h3>
+      <div class="ba-grid">
+        <div class="ba-card">
+          <img src="images/before.jpg" alt="Car before cleaning">
+          <span>Before</span>
+        </div>
+        <div class="ba-card">
+          <img src="images/after.jpg" alt="Car after cleaning">
+          <span>After</span>
+        </div>
+      </div>
     </div>
 
   </div>
 
+  <img src="images/car.jpg" alt="Car valet service in County Mayo">
 </section>
 
 <!-- CLEANING -->
 <section class="split container">
-
   <div>
-    <h2>Domestic Cleaning</h2>
-    <p>Reliable cleaning services across County Mayo.</p>
+    <h2>Domestic Cleaning Services in County Mayo</h2>
+    <p>
+      Reliable home cleaning services including regular cleaning, deep cleaning and move-in/move-out services.
+    </p>
 
     <div class="pricing">
       <h3>Pricing</h3>
       <ul>
-        <li>€20–€30/hour (regular clean)</li>
-        <li>€25–€40/hour (deep clean)</li>
-        <li>From €250 (move in/out)</li>
+        <li>Regular cleaning – €20–€30/hr</li>
+        <li>Deep cleaning – €25–€40/hr</li>
+        <li>One-off cleaning – €250–€600</li>
       </ul>
-      <p class="note">Free quote available.</p>
     </div>
-
   </div>
 
-  <img src="images/cleaning.jpg" alt="Cleaning">
-
+  <img src="images/cleaning.jpg" alt="Cleaning service in County Mayo">
 </section>
 
 <!-- CONTACT -->
-<section id="contact" class="contact">
-
+<section class="contact" id="contact">
   <div class="container">
-
-    <h2>Get Free Quote</h2>
+    <h2>Get a Free Quote</h2>
 
     <form>
-      <input type="text" placeholder="Name">
-      <input type="tel" placeholder="Phone">
+      <input type="text" placeholder="Your Name" required>
+      <input type="tel" placeholder="Phone Number" required>
 
-      <select>
+      <select required>
+        <option value="">Select Service</option>
         <option>Handyman</option>
         <option>Car Valet</option>
         <option>Cleaning</option>
@@ -182,15 +148,13 @@ elements.forEach(el => {
 
       <textarea placeholder="Describe your job"></textarea>
 
-      <button type="submit">Send</button>
+      <button type="submit">Send Request</button>
     </form>
-
   </div>
-
 </section>
 
 <!-- WHATSAPP -->
-<a class="whatsapp" href="https://wa.me/353XXXXXXXXX">WhatsApp</a>
+<a href="#" class="whatsapp">WhatsApp</a>
 
 </body>
 </html>
